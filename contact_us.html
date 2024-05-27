@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US!</title>
+</head>
+<body>
+    <pre><h3>
+        <b>이름</b>       이경은 <br>
+        <b>소속</b>       숙명여자대학교 소프트웨어학부 컴퓨터과학전공 <br>
+        <b>메일</b>       dlruddms@sookmyung.ac.kr <br><br><br><hr>
+        <b>문의사항을 남겨보세요</b><br>
+        <textarea id="textarea" rows = 10 cols = 40></textarea>  <input type="submit" id="submitbutton">
+    </h3></pre>
+    <script>
+        let sb = document.getElementById("submitbutton");
+        let text = document.getElementById("textarea");
+        sb.addEventListener('click', function(){
+            if (text.value === "")
+                { alert('문의사항을 작성하세요.');}
+            else{
+                alert('문의사항이 제출되었습니다.');
+                close();
+            }
+        })
+    </script>
+</body>
+</html>
