@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <div class="all">
+        <div class="header">
+            <img src="01. 한바탕전주 세계를 비빈다_03.png" alt="전주로고">
+        </div>
+        <div class="nav">
+            <div class="playdd">
+                <a href="hanok.html">놀거리</a>
+                <div class="playdd-contents">
+                    <a href="hanok.html">한옥마을여행</a>
+                    <a href="downtown.html">시내여행</a>
+                    <a href="suburb.html">근교여행</a>
+                </div>
+            </div>
+            <div class="fooddd">
+                <a href="food_type.html">먹거리</a>
+                <div class="fooddd-contents">
+                    <a href="food_type.html">종류별 추천</a>
+                    <a href="random.html">메뉴, 식당 랜덤추천</a>
+                </div>
+            </div>
+            <div class="transdd">
+                <a href="mainspot.html">교통편</a>
+                <div class="transdd-contents">
+                    <a href="mainspot.html">주요 관광지로 이동</a>
+                    <a href="otherspot.html">다른 목적지로 이동</a>
+                </div>
+            </div>
+            <div class="commdd">
+                <a href="review.html">커뮤니티</a>
+                <div class="commdd-contents">
+                    <a href="review.html">간단한 후기, 별점 남기기</a>
+                    <a href="media.html">대중매체 속 전주</a>
+                </div>
+            </div>
+        </div>
+        <div class="ads">
+            <div class="ads1-container">
+                <img id="ads1" src="경기전.png" alt="광고사진">
+                <div id="ads1text">
+                    <h2>경기전 방문하기</h2>
+                    <a href="https://map.naver.com/p/entry/place/34648763?c=15.00,0,0,0,dh&placePath=/home" target="blank">클릭</a>
+                </div>
+            </div>
+            <div class="ads2-container">
+                <img id="ads2" src="전주동물원.png" alt="광고사진">
+                <div id="ads2text">
+                    <h2>전주동물원 방문하기</h2>
+                    <a href="https://map.naver.com/p/entry/place/11886776?c=15.00,0,0,0,dh&placePath=/home" target="blank">클릭</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="article">
+                <div id="modify">회원정보 수정</div>
+                이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" value="김아무개"><br>
+                이메일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" value="@sookmyung.ac.kr"><br>
+                아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" disabled id="originid"><br>
+                비밀번호&nbsp;&nbsp;
+                <input type="button" value="비밀번호 변경하기" id="change"><br><br>
+                <div id="withdraw">회원탈퇴</div>
+                회원탈퇴 사유를 적어주세요.<br>
+                <textarea rows="10" cols="100"></textarea>
+                <button id="withdrawbutton">탈퇴하기</button>
+            </div>
+        </div>
+        <div class="footer">
+            <span id="contact_us">CONTACT US</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="reference_file">참고 및 출처</span><br>
+            04310 서울특별시 용산구 청파로 47길 100 숙명여자대학교 100&nbsp;&nbsp;&nbsp;Ⓒdlruddms
+        </div>
+    </div>
+    <script>
+        function lo() {
+            localStorage.clear();
+            alert("일정시간이 지나 자동로그아웃되었습니다.");
+        }
+        let forid = localStorage.getItem('아이디');
+        document.getElementById("originid").value = forid;
+        document.addEventListener("DOMContentLoaded", function() {
+            if(localStorage.getItem('아이디')){
+                let checkpw = prompt('비밀번호를 입력하세요.');
+                while (checkpw !== localStorage.getItem('비밀번호')){
+                    checkpw = prompt('비밀번호를 다시 입력하세요');
+                }
+            }
+        });
+        if(localStorage.getItem('로그인시간')){
+            let lgtime = localStorage.getItem('로그인시간');
+            let now = new Date().getTime();
+            if(now - lgtime == 3600000) {
+                lo();
+            }
+            else {
+                let left = 3600000 - (now-lgtime); //시간 수정
+                setTimeout(lo,left);
+            }
+        }
+        let changebutton = document.getElementById("change");
+        changebutton.addEventListener("click", function(){
+            first = prompt('변경할 비밀번호를 입력하세요.');
+            second = prompt('비밀번호 확인을 위해 다시 한 번 입력해주세요.');
+            while(first!==second) {
+                second = prompt('비밀번호가 일치하지 않습니다. 다시 입력하세요.');
+            }
+            alert('비밀번호가 변경되었습니다.');
+            localStorage['비밀번호'] = second;
+        })
+
+        let wdbutton = document.getElementById("withdrawbutton");
+        wdbutton.addEventListener("click", function(){
+            localStorage.clear();
+            alert('회원탈퇴가 완료되었습니다.')
+            window.location.href="main.html";
+        })
+    </script>
+</body>
+</html>

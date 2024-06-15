@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="food_type.css">
+</head>
+<body>
+    <div class="all">
+        <div class="header">
+            <img src="01. 한바탕전주 세계를 비빈다_03.png" alt="전주로고">
+        </div>
+        <div class="nav">
+            <div class="playdd">
+                <a href="hanok.html">놀거리</a>
+                <div class="playdd-contents">
+                    <a href="hanok.html">한옥마을여행</a>
+                    <a href="downtown.html">시내여행</a>
+                    <a href="suburb.html">근교여행</a>
+                </div>
+            </div>
+            <div class="fooddd">
+                <a href="food_type.html">먹거리</a>
+                <div class="fooddd-contents">
+                    <a href="food_type.html">종류별 추천</a>
+                    <a href="random.html">메뉴, 식당 랜덤추천</a>
+                </div>
+            </div>
+            <div class="transdd">
+                <a href="mainspot.html">교통편</a>
+                <div class="transdd-contents">
+                    <a href="mainspot.html">주요 관광지로 이동</a>
+                    <a href="otherspot.html">다른 목적지로 이동</a>
+                </div>
+            </div>
+            <div class="commdd">
+                <a href="review.html">커뮤니티</a>
+                <div class="commdd-contents">
+                    <a href="review.html">간단한 후기, 별점 남기기</a>
+                    <a href="media.html">대중매체 속 전주</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="aside">
+                <div id="login-state">
+                    <input type="button" value="로그아웃" id="logout">
+                    <input type="button" value="마이페이지" id="mypage">
+                </div>
+                <div id="notlogin-state">
+                        <label for="id">아이디</label>
+                        <input type="text"  id="id" name="id">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" name="pw">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="로그인" id="login">
+                        <input type="button" value="회원가입" id="signup">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <h3>먹거리</h3>
+                        <li><a href="#" style="text-decoration: underline;">종류별 추천</a></li>
+                        <li><a href="random.html">메뉴, 식당 랜덤추천</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="article">
+                <div id="article_title">종류별 추천</div>
+                <span style="font-size: 1.2em;">원하는 종류를 선택하세요</span><br>
+                <input type="radio" class="type" name="type" value="all" checked> 전체보기
+                <input type="radio" class="type" name="type" value="korea"> 한식
+                <input type="radio" class="type" name="type" value="china"> 중식
+                <input type="radio" class="type" name="type" value="west"> 양식
+                <input type="radio" class="type" name="type" value="etc"> 기타
+                <br><br><hr>
+                <div class="korea">
+                    <div>
+                        <h3>현대옥 본점</h3>
+                        <img src="현대옥.png" alt="음식사진">
+                        <p>전주를 대표하는 콩나물국밥집</p>
+                        <a target="blank" href="https://map.naver.com/p/entry/place/20027334?lng=127.1171462&lat=35.8197593&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>베테랑 칼국수</h3>
+                        <img src="베테랑.png" alt="음식사진">
+                        <p>고소한 칼국수와 속이 꽉찬 만두가<br>맛있는 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EB%B2%A0%ED%85%8C%EB%9E%91/place/1246677842?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>남촌 칼국수</h3>
+                        <img src="남촌칼국수.png" alt="음식사진">
+                        <p>시원한 국물과 신선한 바지락이 듬뿍 <br>들어있는 해물칼국수</p>
+                        <a target="blank" href="https://map.naver.com/p/entry/place/1535494654?c=13.22,0,0,0,dh">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>에루화</h3>
+                        <img src="에루화.png" alt="음식사진">
+                        <p>바삭한 메밀치킨과 떡갈비가 맛있는 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%97%90%EB%A3%A8%ED%99%94/place/11723880?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>남노갈비</h3>
+                        <img src="남노갈비.png" alt="음식사진">
+                        <p>매콤한 물갈비</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EB%82%A8%EB%85%B8%EA%B0%88%EB%B9%84/place/16792676?c=15.00,0,0,0,dh&placePath=/home">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>진미집</h3>
+                        <img src="진미집.png" alt="음식사진">
+                        <p>불맛나는 매콤한 돼지불고기와 김밥의 조화가 환상적인 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%A7%84%EB%AF%B8%EC%A7%91/place/1120514874?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">자세히 보기</a>
+                    </div>
+                </div>
+                <div class="china">
+                    <div>
+                        <h3>수정관</h3>
+                        <img src="수정관.png" alt="음식사진">
+                        <p>전주에만 있는 음식, 물짜장으로<br>유명한 곳</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%88%98%EC%A0%95%EA%B4%80/place/16984722?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>백자원</h3>
+                        <img src="백자원.png" alt="음식사진">
+                        <p>모든 음식이 맛있는 노포 맛집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EB%B0%B1%EC%9E%90%EC%9B%90/place/17027545?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>상하이반점</h3>
+                        <img src="상하이반점.png" alt="음식사진">
+                        <p>짬뽕이 맛있는 음식점</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%83%81%ED%95%98%EC%9D%B4%EB%B0%98%EC%A0%90/place/16807968?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">자세히 보기</a>
+                    </div>
+                </div>
+                <div class="etc">
+                    <div>
+                        <h3>다사랑치킨</h3>
+                        <img src="다사랑.png" alt="음식사진">
+                        <p>혀가 얼얼한 화살치킨이 별미인 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EB%8B%A4%EC%82%AC%EB%9E%91%EC%B9%98%ED%82%A8/place/1186508263?c=13.00,0,0,0,dh&placePath=/home">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>솜리치킨</h3>
+                        <img src="솜리.png" alt="음식사진">
+                        <p>바삭한 카레깨통닭이 맛있는 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%86%9C%EB%A6%AC%EC%B9%98%ED%82%A8/place/32231644?c=13.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>길거리야</h3>
+                        <img src="길거리야.png" alt="음식사진">
+                        <p>바게트버거로 유명한 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EA%B8%B8%EA%B1%B0%EB%A6%AC%EC%95%BC/place/13522867?c=15.00,0,0,0,dh&placePath=/home">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>풍년제과</h3>
+                        <img src="풍년제과.png" alt="음식사진">
+                        <p>관광객들의 필수코스, 초코파이로<br>유명한 제과점</p>
+                        <a target="blank" href="https://map.naver.com/p/entry/place/33277058?c=15.00,0,0,0,dh">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>외할머니솜씨</h3>
+                        <img src="외할머니솜씨.png" alt="음식사진">
+                        <p>빙수가 유명한 곳</p>
+                        <a target="blank" href="https://map.naver.com/p/entry/place/16809530?lng=127.1520257&lat=35.8126809&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>마시랑게</h3>
+                        <img src="마시랑게.png" alt="음식사진">
+                        <p>뷰가 좋은 카페</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%A0%84%EC%A3%BC%20%EB%94%94%EC%A0%80%ED%8A%B8/place/1123902077?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh">자세히 보기</a>
+                    </div>
+                </div>
+                <div class="west">
+                    <div>
+                        <h3>일피오레</h3>
+                        <img src="일피오레.png" alt="음식사진">
+                        <p>분위기 좋은 파스타 맛집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%9D%BC%ED%94%BC%EC%98%A4%EB%A0%88/place/1504991121?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dbmp">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>보나베띠</h3>
+                        <img src="보나베띠.png" alt="음식사진">
+                        <p>피자와 스테이크가 맛있는 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EB%B3%B4%EB%82%98%EB%B2%A0%EB%9D%A0/place/20691009?c=13.00,0,0,0,dh&placePath=/home">자세히 보기</a>
+                    </div>
+                    <div>
+                        <h3>써니네집</h3>
+                        <img src="써니네집.png" alt="음식사진">
+                        <p>시금치파스타가 별미인 집</p>
+                        <a target="blank" href="https://map.naver.com/p/search/%EC%A0%84%EC%A3%BC%20%EC%96%91%EC%8B%9D%EC%A7%91/place/32612481?c=12.00,0,0,0,dh&placePath=/home">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+            <div id="ads">
+                <img src="광고_솔가숯불갈비.png" alt="광고" id="adsimg">
+                <div id="adstext">
+                    양념돼지갈비<br>맛집이 궁금하다면?<br><br>
+                    <a target="blank" style="color:white;" href="https://map.naver.com/p/search/%EC%86%94%EA%B0%80%EC%88%AF%EB%B6%88%EA%B0%88%EB%B9%84/place/1967489898?c=15.74,0,0,0,dh&placePath=/home">클릭</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span id="contact_us">CONTACT US</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="reference_file">참고 및 출처</span><br>
+            04310 서울특별시 용산구 청파로 47길 100 숙명여자대학교 100&nbsp;&nbsp;&nbsp;Ⓒdlruddms
+        </div>
+    </div>
+    <script>
+        function lo() {
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+            alert("일정시간이 지나 자동로그아웃되었습니다.");
+        }
+        let login = document.getElementById("login");
+        login.addEventListener("click", function(){
+            let id = document.getElementById('id').value;
+            let pw = document.getElementById('pw').value;
+            let logintime = new Date().getTime();
+            if (id == "" || pw == ""){
+                alert("아이디 혹은 비밀번호가 입력되지 않았습니다.");
+            }
+            else {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+                localStorage.setItem('아이디', id);
+                localStorage.setItem('비밀번호', pw);
+                localStorage.setItem('로그인시간', logintime);
+                setTimeout(lo, 3600000);
+            }
+        }
+        )
+        let logout = document.getElementById("logout")
+        logout.addEventListener("click",function(){
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+        })
+        let mypage = document.getElementById("mypage")
+        mypage.addEventListener("click",function(){
+            window.open("mypage.html", "popup")
+        })
+        let signup = document.getElementById("signup")
+        signup.addEventListener("click",function(){
+            let popup = window.open("signup.html", "popup", "width=500px, height=600px")
+            let popupcheck = setInterval(function(){
+                if (popup.closed) {
+                    clearInterval(popupcheck);
+                    location.reload();
+                }
+            },500);
+        })
+        let radio = document.getElementsByClassName("type");
+        let korea = document.getElementsByClassName("korea")[0];
+        let west = document.getElementsByClassName("west")[0];
+        let china = document.getElementsByClassName("china")[0];
+        let etc = document.getElementsByClassName("etc")[0];
+        for (i=0; i<radio.length; i++){
+            radio[i].addEventListener("change",function(){
+                switch (this.value) {
+                    case "all" :
+                        korea.style.display = "grid";
+                        west.style.display = "grid";
+                        etc.style.display = "grid";
+                        china.style.display = "grid";
+                        break;
+                    case "korea":
+                        korea.style.display = "grid";
+                        west.style.display = "none";
+                        etc.style.display = "none";
+                        china.style.display = "none";
+                        break;
+                    case "west":
+                        korea.style.display = "none";
+                        west.style.display = "grid";
+                        etc.style.display = "none";
+                        china.style.display = "none";
+                        break;
+                    case "china":
+                        korea.style.display = "none";
+                        west.style.display = "none";
+                        etc.style.display = "none";
+                        china.style.display = "grid";
+                        break;
+                    case "etc":
+                        korea.style.display = "none";
+                        west.style.display = "none";
+                        etc.style.display = "grid";
+                        china.style.display = "none";
+                        break;
+                    default:
+                        korea.style.display = "grid";
+                        west.style.display = "grid";
+                        etc.style.display = "grid";
+                        china.style.display = "grid";
+                        break;
+            }
+            })
+        }
+        //로그인되어있을시 로그인유지
+        document.addEventListener("DOMContentLoaded", function() {
+            if(localStorage.getItem('아이디')) {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+            }
+        })
+        if(localStorage.getItem('로그인시간')){
+            let lgtime = localStorage.getItem('로그인시간');
+            let now = new Date().getTime();
+            if(now - lgtime == 3600000) {
+                lo();
+            }
+            else {
+                let left = 3600000 - (now-lgtime); //시간 수정
+                setTimeout(lo,left);
+            }
+        }
+    </script>
+</body>
+</html>

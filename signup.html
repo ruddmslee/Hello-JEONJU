@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Hahmlet", serif;
+        }
+        body {
+            margin: 0 30px;
+        }
+        #mail {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입</h1><br><br>
+    <span style="font-size: small">*는 필수입력필드</span><br><br>
+    <label for="name">이름</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="name" name="name">
+    <br><br>
+    <label for="mail">이메일</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="mail" name="mail"> @
+    <select>
+        <option>naver.com</option>
+        <option>gmail.com</option>
+        <option>daum.com</option>
+    </select>
+    <br><br>
+    <label for="id">아이디*</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="id" name="id">
+    <br><br>
+    <label for="pw">비밀번호*</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="password" id="pw" name="pw">
+    <br><br>
+    <label for="pwcheck">비밀번호 확인*</label>&nbsp;&nbsp;&nbsp;
+    <input type="password" id="pwcheck" name="pwcheck">
+    <br><br>
+    전주시민입니까?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="citizen" value="yes">예
+    <input type="radio" name="citizen" value="no">아니요
+    <br><br>
+    개인정보수집동의*&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="agreement" id="agreement" value="yes">예
+    <input type="radio" name="agreement" id="agreement" value="no">아니요
+    <br><br><br>
+    <input type="button" value="회원가입하기" id="signupbutton" disabled>
+    <script>
+        let pw = document.getElementById("pw");
+        let pwcheck = document.getElementById("pwcheck");
+        let id = document.getElementById("id");
+
+        let subutton = document.getElementById("signupbutton");
+
+        let agreement = document.getElementsByName("agreement");
+        for (i=0; i<agreement.length; i++){
+            agreement[i].addEventListener("change",function(){
+                if(this.value === "yes") {
+                    subutton.disabled = false;
+                }
+                else if(this.value === "no") {
+                    subutton.disabled = true;
+                }
+                else {
+                    subutton.disabled = true;
+                }
+            })
+        }
+
+        subutton.addEventListener("click", function(){
+            if (id.value==="" || pw.value==="" || pwcheck.value===""){
+                alert('아이디나 비밀번호가 입력되지 않았습니다.')
+            }
+            else if (pw.value!==pwcheck.value) {
+                alert('비밀번호가 일치하지 않습니다.');
+            }
+            else{
+                alert('환영합니다!');
+                localStorage.setItem('아이디', id.value);
+                localStorage.setItem('비밀번호', pw.value);
+                let logintime = new Date().getTime();
+                localStorage.setItem('로그인 시간', logintime);
+                window.close();
+            }
+        })
+    </script>
+</body>
+</html>

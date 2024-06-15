@@ -25,14 +25,14 @@
         }
         #logo {
             position: absolute;
-            top: 28%;
+            top: 27%;
             left: 50%;
             transform: translate(-50%,-40%);
             width: 270px;
         }
         .menu {
             position: absolute;
-            bottom: 10%;
+            bottom: 11%;
             left: 50%;
             transform: translate(-50%, 0%);
             width: 400px;
@@ -80,7 +80,31 @@
         footer span:hover {
             text-decoration: underline;
         }
-
+        #popup {
+            display: none;
+            position: fixed;
+            background-color: rgb(238,238,238);
+            z-index: 1;
+            padding: 5px;
+            width: 400px;
+            height: 450px;
+            top: 5%;
+            left: 5%;
+        }
+        #popup .button {
+            margin-left: 225px;
+            margin-top: 5px;
+        }
+        .button #popupclose {
+            background-color: rgb(45, 45, 45);
+            color: white;
+        }
+        #popup img {
+            width: 390px;
+            height: auto;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -88,16 +112,23 @@
     <div id="reference" style="font-size: x-small;">이미지 출처 - 네이버백과사전</div>
     <img src="01. 한바탕전주 세계를 비빈다_03.png" alt="전주로고" id="logo">
     <div class="menu">
-        <a href="#" id="menu1">놀거리</a>
-        <a href="#" id="menu2">먹거리</a><br><br><br><br><br>
-        <a href="#" id="menu3">교통편</a>
-        <a href="#" id="menu4">커뮤니티</a>
+        <a href="hanok.html" id="menu1">놀거리</a>
+        <a href="food_type.html" id="menu2">먹거리</a><br><br><br><br><br>
+        <a href="main.html" id="menu3">교통편</a>
+        <a href="review.html" id="menu4">커뮤니티</a>
     </div>
     <footer>
         <span id="contact_us">CONTACT US</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span id="reference_file">참고 및 출처</span><br>
         04310 서울특별시 용산구 청파로 47길 100 숙명여자대학교 100<br>Ⓒdlruddms
     </footer>
+    <div id="popup">
+        <img src="팝업광고.png" alt="팝업광고 사진">
+        <div class="button">
+            <button id="popupclose">닫기</button>
+            <button id="dontshow">오늘 하루 보지 않기</button>
+        </div>
+    </div>
     <script>
         let contact = document.getElementById("contact_us");
         contact.addEventListener("click",function(){
@@ -106,6 +137,38 @@
         let rf = document.getElementById("reference_file");
         rf.addEventListener("click", function(){
             window.open("reference.html","popup","width=630 height=450");
+        })
+        function getCookie(name) {
+            let pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+	        for(let i=0; i<pairs.length; i++) {
+		        let pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+		        let unit = pair.split("=");
+		        if(unit[0] == name) {
+			        return unescape(unit[1]);
+	            }
+            }
+	        return null;
+        }
+        function SetCookie (name, value, expireDate) {
+	        let cookieStr = name + "=" + escape(value) + 
+                ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
+            document.cookie = cookieStr;
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            if(getCookie("yespopup") !== "true") {
+                document.getElementById("popup").style.display = "block";
+            }
+        })
+
+        document.getElementById("popupclose").addEventListener("click", function(){
+            document.getElementById("popup").style.display = "none"
+        })
+
+        document.getElementById("dontshow").addEventListener("click", function(){
+            let expire = new Date();
+            expire.setTime(expire.getTime() + (24*60*60*1000));
+            SetCookie("yespopup", "true", expire);
+            document.getElementById("popup").style.display = "none";
         })
     </script>
 </body>

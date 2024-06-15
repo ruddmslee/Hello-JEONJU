@@ -1,0 +1,146 @@
+body {
+    margin : 0;
+}
+* {
+    font-family: "Hahmlet", serif;
+}
+.all {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    background-color: rgb(227, 241, 254);
+    padding: 30px;
+}
+.header img{
+    position: relative;
+    width: 130px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.nav {
+    background-color: rgb(44, 44, 44);
+    padding: 10px;
+    text-align: center
+}
+.nav a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: white;
+    padding: 10px 30px 10px 30px;
+}
+.nav a:hover {
+    background-color:rgb(227, 241, 254);
+    color: black;
+}
+.playdd, .fooddd, .transdd, .commdd {
+    display: inline-block;
+    position: relative;
+}
+.playdd-contents {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -25px;
+    z-index: 1;
+}
+.fooddd-contents, .transdd-contents, .commdd-contents {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -50px;
+    z-index: 1;
+}
+.playdd:hover .playdd-contents, .fooddd:hover .fooddd-contents, .transdd:hover .transdd-contents, .commdd:hover .commdd-contents {
+    display: block;
+    font-weight: 700;
+    background-color: rgb(44, 44, 44);
+    border-radius: 0 0 3% 3%;
+}
+.playdd-contents a {
+    display: block;
+    width: 100px;
+}
+.fooddd-contents a, .transdd-contents a {
+    display: block;
+    width: 150px; 
+}
+.commdd-contents a {
+    display: block;
+    width: 190px;
+}
+.ads {
+    margin: 15px 0 0 0;
+    padding-left: 170px;
+}
+.ads1-container, .ads2-container {
+    width: 590px;
+    height: 250px;
+    display: inline-block;
+    position: relative;
+}
+#ads1, #ads2 {
+    width: 590px;
+    height: 250px;
+}
+.ads1-container:hover #ads1, .ads2-container:hover #ads2 {
+    filter: blur(3px);
+    opacity: 0.3;
+}
+#ads1text, #ads2text {
+    position: absolute;
+    top: 28%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    color: black;
+    transition: opacity 0.3s ease;
+}
+#ads1text a, #ads2text a {
+    background-color: rgb(52, 52, 52);
+    padding: 2px 5px;
+    text-decoration: none;
+    color: white;
+}
+.ads1-container:hover #ads1text, .ads2-container:hover #ads2text {
+    opacity: 1;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px;
+    flex: 1;
+}
+#article {
+    flex:82%;
+    border: 1px solid gray;
+    margin: 10px 130px;
+    padding: 40px;
+    line-height: 40px;
+}
+#modify, #withdraw {
+    font-weight: 600;
+    font-size: 1.7em;
+}
+textarea {
+    margin-right: 10px;
+}
+.footer {
+    left: 0;
+    bottom: 0;
+    background-color: gray;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
+    font-size: smaller;
+    padding-top: 10px;
+    line-height: 20px;
+    opacity: 80%;
+}
+.footer span:hover {
+    text-decoration: underline;
+}

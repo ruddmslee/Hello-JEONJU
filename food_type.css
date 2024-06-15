@@ -1,0 +1,173 @@
+body {
+    margin : 0;
+}
+* {
+    font-family: "Hahmlet", serif;
+}
+.all {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    background-color: rgb(227, 241, 254);
+    padding: 30px;
+}
+.header img{
+    position: relative;
+    width: 130px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.nav {
+    background-color: rgb(44, 44, 44);
+    padding: 10px;
+    text-align: center
+}
+.nav a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: white;
+    padding: 10px 30px 10px 30px;
+}
+.nav a:hover {
+    background-color:rgb(227, 241, 254);
+    color: black;
+}
+.playdd, .fooddd, .transdd, .commdd {
+    display: inline-block;
+    position: relative;
+}
+.playdd-contents {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -25px;
+}
+.fooddd-contents, .transdd-contents, .commdd-contents {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -50px;
+}
+.playdd:hover .playdd-contents, .fooddd:hover .fooddd-contents, .transdd:hover .transdd-contents, .commdd:hover .commdd-contents {
+    display: block;
+    font-weight: 700;
+    background-color: rgb(44, 44, 44);
+    border-radius: 0 0 3% 3%;
+}
+.playdd-contents a {
+    display: block;
+    width: 100px;
+}
+.fooddd-contents a, .transdd-contents a {
+    display: block;
+    width: 150px; 
+}
+.commdd-contents a {
+    display: block;
+    width: 190px;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px;
+    flex: 1;
+}
+#aside {
+    flex: 18%;
+    padding: 10px;
+}
+#notlogin-state {
+    width: 200px;
+}
+#notlogin-state input {
+    margin : 5px;
+}
+#login-state {
+    display: none;
+}
+#notlogin-state {
+    display: block;
+}
+.menu {
+    background-color: aliceblue;
+    margin: 30px 20px 15px 0;
+    padding: 10px 0px;
+    border: 1px solid gray;
+    border-radius: 10%;
+}
+.menu b {
+    margin-bottom: 100px; 
+}
+.menu li {
+    list-style-type: none;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+}
+#article {
+    flex: 70%;
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 20px;
+    line-height: 30px;
+}
+#article_title {
+    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.korea, .etc, .china, .west{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-top: 20px;
+}
+.korea div, .etc div, .china div, .west div {
+    border: 1px solid black;
+    padding: 0px 20px 20px 20px;
+}
+.korea img, .etc img, .china img, .west img {
+    width: 260px;
+    height: 180px;
+}
+#ads {
+    flex: 12%;
+    margin: 10px;
+    padding: 0 0px 0px 10px;
+    position: relative;
+}
+#ads img {
+    width: 180px;
+    height: 200px;
+}
+#adstext {
+    position: absolute;
+    top: 55px;
+    left: 37px;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    font-weight: bold;
+}
+.footer {
+    left: 0;
+    bottom: 0;
+    background-color: gray;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
+    font-size: smaller;
+    padding-top: 10px;
+    line-height: 20px;
+    opacity: 80%;
+}
+.footer span:hover {
+    text-decoration: underline;
+}
