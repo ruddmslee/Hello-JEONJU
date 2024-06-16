@@ -70,6 +70,7 @@
             </div>
             <div id="article">
                 <div id="article_title">종류별 추천</div>
+                <div id="reviewbutton">후기 보러가기</div>
                 <span style="font-size: 1.2em;">원하는 종류를 선택하세요</span><br>
                 <input type="radio" class="type" name="type" value="all" checked> 전체보기
                 <input type="radio" class="type" name="type" value="korea"> 한식
@@ -209,6 +210,15 @@
         </div>
     </div>
     <script>
+        let contact = document.getElementById("contact_us");
+        contact.addEventListener("click",function(){
+            window.open("contact_us.html", "popup", "width=630 height=450");
+        })
+        let rf = document.getElementById("reference_file");
+        rf.addEventListener("click", function(){
+            window.open("reference.html","popup","width=630 height=450");
+        })
+        
         function lo() {
             document.getElementById("login-state").style.display = "none";
             document.getElementById("notlogin-state").style.display = "block";
@@ -324,6 +334,10 @@
                 setTimeout(lo,left);
             }
         }
+        let reviewbutton = document.getElementById("reviewbutton");
+        reviewbutton.addEventListener("click", function(){
+            window.open('review.html');
+        })
     </script>
 </body>
 </html>

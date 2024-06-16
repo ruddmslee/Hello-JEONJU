@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="downtown.css">
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4t1y9nntf5"></script>
+</head>
+<body>
+    <div class="all">
+        <div class="header">
+            <img src="01. 한바탕전주 세계를 비빈다_03.png" alt="전주로고">
+        </div>
+        <div class="nav">
+            <div class="playdd">
+                <a href="hanok.html">놀거리</a>
+                <div class="playdd-contents">
+                    <a href="hanok.html">한옥마을여행</a>
+                    <a href="downtown.html">시내여행</a>
+                    <a href="suburb.html">근교여행</a>
+                </div>
+            </div>
+            <div class="fooddd">
+                <a href="food_type.html">먹거리</a>
+                <div class="fooddd-contents">
+                    <a href="food_type.html">종류별 추천</a>
+                    <a href="random.html">메뉴, 식당 랜덤추천</a>
+                </div>
+            </div>
+            <div class="transdd">
+                <a href="mainspot.html">교통편</a>
+                <div class="transdd-contents">
+                    <a href="mainspot.html">주요 관광지로 이동</a>
+                    <a href="otherspot.html">다른 목적지로 이동</a>
+                </div>
+            </div>
+            <div class="commdd">
+                <a href="review.html">커뮤니티</a>
+                <div class="commdd-contents">
+                    <a href="review.html">간단한 후기, 별점 남기기</a>
+                    <a href="media.html">대중매체 속 전주</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="aside">
+                <div id="login-state">
+                    <input type="button" value="로그아웃" id="logout">
+                    <input type="button" value="마이페이지" id="mypage">
+                </div>
+                <div id="notlogin-state">
+                        <label for="id">아이디</label>
+                        <input type="text"  id="id" name="id">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" name="pw">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="로그인" id="login">
+                        <input type="button" value="회원가입" id="signup">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <h3>놀거리</h3>
+                        <li><a href="hanok.html">한옥마을여행</a></li>
+                        <li><a href="downtown.html" style="text-decoration: underline;">시내여행</a></li>
+                        <li><a href="suburb.html">근교여행</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="article">
+                <div id="article_title">&nbsp;&nbsp;&nbsp;&nbsp;시내여행</div>
+                <div class="article_body">
+                    <div id="map" style="width:350px; height: 430px; margin-top: 48px; border: 0.5px solid gainsboro;"></div>
+                    <div class="article_contents">
+                        **&nbsp;&nbsp;더 알아보고 싶다면 <ins>이미지를 클릭</ins>해보세요!<br><br>
+                        <div class="nature">
+                            <h2 style="margin-top: 0;">자연</h2>
+                            <div id="nature1">
+                                <img src="전주수목원.jpg" alt="사진" style="width: 200px; height:120px;" id="natureimg1"><br>
+                                <h3 style="text-align: center; margin: 10px 0; font-weight: 400;">전주수목원</h3>
+                            </div>
+                            <div id="nature2">
+                                <img src="덕진공원.jpg" alt="사진" style="width: 200px; height:120px;" id="natureimg2"><br>
+                                <h3 style="text-align: center; margin: 10px 0; font-weight: 400;">덕진공원</h3>
+                            </div>
+                            <div id="nature3">
+                                <img src="아중호수.jpg" alt="사진" style="width: 200px; height:120px;" id="natureimg3"><br>
+                                <h3 style="text-align: center; margin: 10px 0; font-weight: 400;">아중호수</h3>
+                            </div>
+                        </div>
+                        <div class="exhibition">
+                            <h2 style="margin-top: 0;">체험 / 전시 / 행사</h2>
+                            <div id="exhibition1">
+                                <img src="국제영화제.jpg" alt="사진" style="width: 200px; height:120px;" id="exhibitionimg1"><br>
+                                <h3 style="text-align: center; margin: 10px 0; font-weight: 400;">국제영화제</h3>
+                            </div>
+                            <div id="exhibition2">
+                                <img src="가맥축제.jpg" alt="사진" style="width: 200px; height:120px;" id="exhibitionimg2"><br>
+                                <h3 style="text-align: center; margin: 10px 0; font-weight: 400;">가맥축제</h3>
+                            </div>
+                            <div id="exhibition3">
+                                <img src="대사습놀이.jpg" alt="사진" style="width: 200px; height:120px;" id="exhibitionimg3"><br>
+                                <h3 style="text-align: center; margin: 10px 0; font-weight: 400;">대사습놀이</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span id="contact_us">CONTACT US</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="reference_file">참고 및 출처</span><br>
+            04310 서울특별시 용산구 청파로 47길 100 숙명여자대학교 100&nbsp;&nbsp;&nbsp;Ⓒdlruddms
+        </div>
+    </div>
+    <script>
+        let contact = document.getElementById("contact_us");
+        contact.addEventListener("click",function(){
+            window.open("contact_us.html", "popup", "width=630 height=450");
+        })
+        let rf = document.getElementById("reference_file");
+        rf.addEventListener("click", function(){
+            window.open("reference.html","popup","width=630 height=450");
+        })
+        function lo() {
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+            alert("일정시간이 지나 자동로그아웃되었습니다.");
+        }
+        let login = document.getElementById("login");
+        login.addEventListener("click", function(){
+            let id = document.getElementById('id').value;
+            let pw = document.getElementById('pw').value;
+            let logintime = new Date().getTime();
+            if (id == "" || pw == ""){
+                alert("아이디 혹은 비밀번호가 입력되지 않았습니다.");
+            }
+            else {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+                localStorage.setItem('아이디', id);
+                localStorage.setItem('비밀번호', pw);
+                localStorage.setItem('로그인시간', logintime);
+                setTimeout(lo, 3600000);
+            }
+        }
+        )
+        let logout = document.getElementById("logout")
+        logout.addEventListener("click",function(){
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+        })
+        let mypage = document.getElementById("mypage")
+        mypage.addEventListener("click",function(){
+            window.open("mypage.html", "popup") 
+        })
+        let signup = document.getElementById("signup")
+        signup.addEventListener("click",function(){
+            let popup = window.open("signup.html", "popup", "width=500px, height=600px")
+            let popupcheck = setInterval(function(){
+                if (popup.closed) {
+                    clearInterval(popupcheck);
+                    location.reload();
+                }
+            },500); 
+        })
+        let natureimg1 = document.getElementById("natureimg1");
+        natureimg1.addEventListener("click", function(){
+            window.open("https://map.naver.com/p/entry/place/11622675?lng=127.054272&lat=35.870695&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh");
+        })
+        let natureimg2 = document.getElementById("natureimg2");
+        natureimg2.addEventListener("click", function(){
+            window.open("https://map.naver.com/p/entry/place/11622405?c=15.00,0,0,0,dh");
+        })
+        let natureimg3 = document.getElementById("natureimg3");
+        natureimg3.addEventListener("click", function(){
+            window.open("https://map.naver.com/p/entry/place/17477639?c=15.00,0,0,0,dh");
+        })
+        let exhibitionimg1 = document.getElementById("exhibitionimg1");
+        exhibitionimg1.addEventListener("click", function(){
+            window.open("https://www.jeonjufest.kr/");
+        })
+        let exhibitionimg2 = document.getElementById("exhibitionimg2");
+        exhibitionimg2.addEventListener("click", function(){
+            window.open("http://www.gamaek.co.kr/");
+        })
+        let exhibitionimg3 = document.getElementById("exhibitionimg3");
+        exhibitionimg3.addEventListener("click", function(){
+            window.open("https://www.jjdss.or.kr/");
+        })
+        document.addEventListener("DOMContentLoaded", function() {
+            if(localStorage.getItem('아이디')) {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+            }
+        })
+        if(localStorage.getItem('로그인시간')){
+            let lgtime = localStorage.getItem('로그인시간');
+            let now = new Date().getTime();
+            if(now - lgtime == 3600000) {
+                lo();
+            }
+            else {
+                let left = 3600000 - (now-lgtime);
+                setTimeout(lo,left);
+            }
+        }
+        var map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(35.8475732, 127.121895),
+            zoom: 11
+        })
+        var marker1 = new naver.maps.Marker({
+            position: new naver.maps.LatLng(35.8709862, 127.0549618),
+            map: map
+        });
+        var marker2 = new naver.maps.Marker({
+            position: new naver.maps.LatLng(35.8475732, 127.121895),
+            map: map
+        });
+        var marker3 = new naver.maps.Marker({
+            position: new naver.maps.LatLng(35.8219604, 127.1773776),
+            map: map
+        });
+    </script>
+</body>
+</html>

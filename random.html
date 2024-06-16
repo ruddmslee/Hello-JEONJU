@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="random.css">
+</head>
+<body>
+    <div class="all">
+        <div class="header">
+            <img src="01. 한바탕전주 세계를 비빈다_03.png" alt="전주로고">
+        </div>
+        <div class="nav">
+            <div class="playdd">
+                <a href="hanok.html">놀거리</a>
+                <div class="playdd-contents">
+                    <a href="hanok.html">한옥마을여행</a>
+                    <a href="downtown.html">시내여행</a>
+                    <a href="suburb.html">근교여행</a>
+                </div>
+            </div>
+            <div class="fooddd">
+                <a href="food_type.html">먹거리</a>
+                <div class="fooddd-contents">
+                    <a href="food_type.html">종류별 추천</a>
+                    <a href="random.html">메뉴, 식당 랜덤추천</a>
+                </div>
+            </div>
+            <div class="transdd">
+                <a href="mainspot.html">교통편</a>
+                <div class="transdd-contents">
+                    <a href="mainspot.html">주요 관광지로 이동</a>
+                    <a href="otherspot.html">다른 목적지로 이동</a>
+                </div>
+            </div>
+            <div class="commdd">
+                <a href="review.html">커뮤니티</a>
+                <div class="commdd-contents">
+                    <a href="review.html">간단한 후기, 별점 남기기</a>
+                    <a href="media.html">대중매체 속 전주</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="aside">
+                <div id="login-state">
+                    <input type="button" value="로그아웃" id="logout">
+                    <input type="button" value="마이페이지" id="mypage">
+                </div>
+                <div id="notlogin-state">
+                        <label for="id">아이디</label>
+                        <input type="text"  id="id" name="id">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" name="pw">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="로그인" id="login">
+                        <input type="button" value="회원가입" id="signup">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <h3>먹거리</h3>
+                        <li><a href="food_type.html">종류별 추천</a></li>
+                        <li><a href="random.html"  style="text-decoration: underline;">메뉴, 식당 랜덤추천</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="article">
+                <br>
+                <img src="전주시 캐릭터.jpg" alt="전주시캐릭터">
+                <h2 style="font-weight: 500; margin: 5px">전주에 먹을 게 많아서 뭘 먹어야할지 모르겠다면?</h2>
+                맛돌이와 멋순이가 추천해줄게요!
+                <br><br>
+                <input type="button" value="랜덤 추천 받기" id="randombutton"><br>
+                <span id="message" style="font-size: smaller;">↑ 클릭!</span>
+                <br><br>
+                <div id="result" style="font-size: x-large;"></div>
+            </div>
+            <div id="ads">
+                <img src="광고_가츠연.png" alt="광고" id="adsimg">
+                <div id="adstext">
+                    <span>규카츠 맛집이</span><br><span>&nbsp;궁금하다면?&nbsp;</span><br><br>
+                    <a target="blank" style="background-color:gainsboro; color:black; padding: 3px; font-size: 0.8em;" href="https://map.naver.com/p/entry/place/1517836857?lng=127.1073599&lat=35.8167449&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">클릭</a>
+                </div>
+                <span style="font-size: smaller;">사진에 마우스를 올려보세요!</span>
+            </div>
+        </div>
+        <div class="footer">
+            <span id="contact_us">CONTACT US</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="reference_file">참고 및 출처</span><br>
+            04310 서울특별시 용산구 청파로 47길 100 숙명여자대학교 100&nbsp;&nbsp;&nbsp;Ⓒdlruddms
+        </div>
+    </div>
+    <script>
+        let contact = document.getElementById("contact_us");
+        contact.addEventListener("click",function(){
+            window.open("contact_us.html", "popup", "width=630 height=450");
+        })
+        let rf = document.getElementById("reference_file");
+        rf.addEventListener("click", function(){
+            window.open("reference.html","popup","width=630 height=450");
+        })
+        let result = document.getElementById("result");
+        let rdbutton = document.getElementById("randombutton");
+        let message = document.getElementById("message");
+        let foodarr = [['수정관', '물짜장'], ['백자원', '짜장면'], ['상하이반점', '짬뽕'], ['에루화', '메밀치킨'], ['에루화', '떡갈비'], ['진미집', '돼지불고기'], ['현대옥', '콩나물국밥'], ['남노갈비', '물갈비'], ['남촌칼국수', '바지락손칼국수'], ['베테랑칼국수', '칼국수'], ['베테랑칼국수', '만두'], ['다사랑치킨', '순살-화살 반반치킨'],['솜리치킨', '순살깨통닭'], ['길거리야', '바게트버거'], ['일피오레', '해산물필라프'], ['써니네집', '시금치파스타'], ['보나베띠', '해산물필라프'], ['보나베띠', '스테이크'], ['보나베띠', '마르게리타피자']]
+        rdbutton.addEventListener('click', function(){
+            let randomnum = random();
+            result.innerHTML = "오늘은 &quot;<b>" + foodarr[randomnum][0] +"</b>&quot;에서 &quot;<b>" + foodarr[randomnum][1] + "</b>&quot; 추천!";
+            message.style.display = "none";
+        })
+        function random(){
+            let num = Math.floor(Math.random()*foodarr.length);
+            return num;
+        }
+        function lo() {
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+            alert("일정시간이 지나 자동로그아웃되었습니다.");
+        }
+        let login = document.getElementById("login");
+        login.addEventListener("click", function(){
+            let id = document.getElementById('id').value;
+            let pw = document.getElementById('pw').value;
+            let logintime = new Date().getTime();
+            if (id == "" || pw == ""){
+                alert("아이디 혹은 비밀번호가 입력되지 않았습니다.");
+            }
+            else {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+                localStorage.setItem('아이디', id);
+                localStorage.setItem('비밀번호', pw);
+                localStorage.setItem('로그인시간', logintime);
+                setTimeout(lo, 3600000);
+            }
+        }
+        )
+        let logout = document.getElementById("logout")
+        logout.addEventListener("click",function(){
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+        })
+        let mypage = document.getElementById("mypage")
+        mypage.addEventListener("click",function(){
+            window.open("mypage.html", "popup")  
+        })
+        let signup = document.getElementById("signup")
+        signup.addEventListener("click",function(){
+            let popup = window.open("signup.html", "popup", "width=500px, height=600px")
+            let popupcheck = setInterval(function(){
+                if (popup.closed) {
+                    clearInterval(popupcheck);
+                    location.reload();
+                }
+            },500);
+        })
+        document.addEventListener("DOMContentLoaded", function() {
+            if(localStorage.getItem('아이디')) {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+            }
+        })
+        if(localStorage.getItem('로그인시간')){
+            let lgtime = localStorage.getItem('로그인시간');
+            let now = new Date().getTime();
+            if(now - lgtime == 3600000) {
+                lo();
+            }
+            else {
+                let left = 3600000 - (now-lgtime); //시간 수정
+                setTimeout(lo,left);
+            }
+        }
+    </script>
+</body>
+</html>

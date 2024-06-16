@@ -85,6 +85,14 @@
         </div>
     </div>
     <script>
+        let contact = document.getElementById("contact_us");
+        contact.addEventListener("click",function(){
+            window.open("contact_us.html", "popup", "width=630 height=450");
+        })
+        let rf = document.getElementById("reference_file");
+        rf.addEventListener("click", function(){
+            window.open("reference.html","popup","width=630 height=450");
+        })
         function lo() {
             localStorage.clear();
             alert("일정시간이 지나 자동로그아웃되었습니다.");

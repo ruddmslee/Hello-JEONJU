@@ -44,12 +44,14 @@ body {
     position: absolute;
     margin-top: 10px;
     margin-left: -25px;
+    z-index: 1;
 }
 .fooddd-contents, .transdd-contents, .commdd-contents {
     display: none;
     position: absolute;
     margin-top: 10px;
     margin-left: -50px;
+    z-index: 1;
 }
 .playdd:hover .playdd-contents, .fooddd:hover .fooddd-contents, .transdd:hover .transdd-contents, .commdd:hover .commdd-contents {
     display: block;
@@ -113,58 +115,50 @@ body {
     flex: 70%;
     border: 1px solid gray;
     margin: 10px;
-    padding: 20px;
-    line-height: 30px;
-}
-#reviewbutton {
-    background-color: gainsboro;
-    width: 100px;
-    font-size: smaller;
+    padding: 15px;
     text-align: center;
-    line-height: 20px;
-    padding: 5px 0;
-    position: absolute;
-    top: 300px;
-    left: 76%;
 }
-#article_title {
-    font-weight: 600;
-    font-size: 2em;
-    margin-bottom: 20px;
-    margin-top: 5px;
-}
-.korea, .etc, .china, .west{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    margin-top: 20px;
-}
-.korea div, .etc div, .china div, .west div {
-    border: 1px solid black;
-    padding: 0px 20px 20px 20px;
-}
-.korea img, .etc img, .china img, .west img {
-    width: 260px;
-    height: 180px;
+#article img {
+    width: 180px;
+    margin: 20px 50%;
+    transform: translateX(-50%);
 }
 #ads {
     flex: 12%;
     margin: 10px;
-    padding: 0 0px 0px 10px;
+    padding: 0 20px;
     position: relative;
+    text-align: center;
+    height: 220px;
 }
 #ads img {
     width: 180px;
-    height: 200px;
+    height: auto;
+    transition: filter 0.2s;
 }
 #adstext {
     position: absolute;
-    top: 55px;
-    left: 37px;
+    top: 45px;
+    left: 52px;
     color: white;
     z-index: 1;
     text-align: center;
     font-weight: bold;
+    opacity: 0;
+    font-size: large;
+    line-height: 33px;
+}
+#adstext span {
+    background-color: rgb(54, 54, 54);
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+#ads:hover #adsimg {
+    filter: blur(3px);
+    opacity: 0.8;
+}
+#ads:hover #adstext {
+    opacity: 1;
 }
 .footer {
     left: 0;

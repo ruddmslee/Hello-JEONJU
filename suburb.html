@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="suburb.css">
+</head>
+<body>
+    <div class="all">
+        <div class="header">
+            <img src="01. 한바탕전주 세계를 비빈다_03.png" alt="전주로고">
+        </div>
+        <div class="nav">
+            <div class="playdd">
+                <a href="hanok.html">놀거리</a>
+                <div class="playdd-contents">
+                    <a href="hanok.html">한옥마을여행</a>
+                    <a href="downtown.html">시내여행</a>
+                    <a href="suburb.html">근교여행</a>
+                </div>
+            </div>
+            <div class="fooddd">
+                <a href="food_type.html">먹거리</a>
+                <div class="fooddd-contents">
+                    <a href="food_type.html">종류별 추천</a>
+                    <a href="random.html">메뉴, 식당 랜덤추천</a>
+                </div>
+            </div>
+            <div class="transdd">
+                <a href="mainspot.html">교통편</a>
+                <div class="transdd-contents">
+                    <a href="mainspot.html">주요 관광지로 이동</a>
+                    <a href="otherspot.html">다른 목적지로 이동</a>
+                </div>
+            </div>
+            <div class="commdd">
+                <a href="review.html">커뮤니티</a>
+                <div class="commdd-contents">
+                    <a href="review.html">간단한 후기, 별점 남기기</a>
+                    <a href="media.html">대중매체 속 전주</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="aside">
+                <div id="login-state">
+                    <input type="button" value="로그아웃" id="logout">
+                    <input type="button" value="마이페이지" id="mypage">
+                </div>
+                <div id="notlogin-state">
+                        <label for="id">아이디</label>
+                        <input type="text"  id="id" name="id">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" name="pw">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="로그인" id="login">
+                        <input type="button" value="회원가입" id="signup">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <h3>놀거리</h3>
+                        <li><a href="hanok.html">한옥마을여행</a></li>
+                        <li><a href="downtown.html">시내여행</a></li>
+                        <li><a href="suburb.html" style="text-decoration: underline;">근교여행</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="ads" style="text-align: center;">
+                <img src="광고_도립미술관1.png" alt="광고">
+                <img src="광고_도립미술관2.png" alt="광고">
+                <a target="blank" style="color:black" href="https://www.jma.go.kr/index.php?mode=homepage">전시 더 알아보기</a>
+            </div>
+            <div id="article">
+                <div id="article_title">근교여행</div>
+                <img id="map" src="전라북도지도.png" alt="전라북도지도" style="width:430px; height: 300px;"><br><br>
+                <div id="circle1">ㅇ</div>
+                <div id="circle2">ㅇ</div>
+                <div id="article_contents">
+                    <div id="content1">
+                        <h2 style="font-weight: 600; margin: 5px 0 13px 0; font-size: 1.4em;">완주</h2>
+                        <img src="삼례문화예술촌.png" alt="사진" id="image1"><br>
+                        <p>
+                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/entry/place/13491207?lng=127.0851719&lat=35.7285794&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">모악산</a></li>
+                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/entry/place/11620352?lng=127.1069464&lat=35.7278363&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">전북도립미술관</a></li>
+                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/search/%EA%B5%AC%EC%9D%B4%EC%A0%80%EC%88%98%EC%A7%80/place/17614020?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh">구이저수지</a></li>
+                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/search/%EC%82%BC%EB%A1%80%EC%98%88%EC%88%A0%EC%B4%8C/place/32582350?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh">삼례문화예술촌</a></li>
+                        </p>
+                    </div>
+                    <div id="content2">
+                        <h2 style="font-weight: 600; margin: 5px 0 13px 0; font-size: 1.4em;">임실</h2>
+                        <img src="임실치즈테마파크2.png" alt="사진" id="image2"><br>
+                        <p>
+                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/entry/place/11491834?lng=127.1117031&lat=35.5909545&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">옥정호</a></li>
+                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/search/%EC%9E%84%EC%8B%A4%EC%B9%98%EC%A6%88%ED%85%8C%EB%A7%88%ED%8C%8C%ED%81%AC/place/1514459962?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh">임실치즈테마파크</a></li>
+                            <br>
+                        </p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span id="contact_us">CONTACT US</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="reference_file">참고 및 출처</span><br>
+            04310 서울특별시 용산구 청파로 47길 100 숙명여자대학교 100&nbsp;&nbsp;&nbsp;Ⓒdlruddms
+        </div>
+    </div>
+    <script>
+        let image1arr = ["모악산.png", "전북도립미술관.png", "삼례문화예술촌.png"];
+        let image2arr = ["옥정호1.png", "옥정호2.png", "임실치즈테마파크1.png", "임실치즈테마파크2.png"];
+        let index1 = 0;
+        let index2 = 0;
+
+        function img1change() {
+            let image1 = document.getElementById("image1");
+            image1.src = image1arr[index1];
+            index1 = (index1+1) % image1arr.length;
+        }
+        function img2change() {
+            let image2 = document.getElementById("image2");
+            image2.src = image2arr[index2];
+            index2 = (index2+1) % image2arr.length;
+        }
+        setInterval(img1change,7000);
+        setInterval(img2change, 7000);
+
+        let content1 = document.getElementById("content1");
+        content1.addEventListener("mouseover", function(){
+            let circle1 = document.getElementById("circle1");
+            circle1.style.opacity = "1";
+            circle1.style.transition = "opacity 0.1s ease";
+        })
+        content1.addEventListener("mouseout", function(){
+            let circle1 = document.getElementById("circle1");
+            circle1.style.opacity = "0";
+            circle1.style.transition = "opacity 0.1s ease";
+        })
+        let content2 = document.getElementById("content2");
+        content2.addEventListener("mouseover", function(){
+            let circle2 = document.getElementById("circle2");
+            circle2.style.opacity = "1";
+            circle2.style.transition = "opacity 0.1s ease";
+        })
+        content2.addEventListener("mouseout", function(){
+            let circle2 = document.getElementById("circle2");
+            circle2.style.opacity = "0";
+            circle2.style.transition = "opacity 0.1s ease";
+        })
+        let contact = document.getElementById("contact_us");
+        contact.addEventListener("click",function(){
+            window.open("contact_us.html", "popup", "width=630 height=450");
+        })
+        let rf = document.getElementById("reference_file");
+        rf.addEventListener("click", function(){
+            window.open("reference.html","popup","width=630 height=450");
+        })
+        function lo() {
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+            alert("일정시간이 지나 자동로그아웃되었습니다.");
+        }
+        let login = document.getElementById("login");
+        login.addEventListener("click", function(){
+            let id = document.getElementById('id').value;
+            let pw = document.getElementById('pw').value;
+            let logintime = new Date().getTime();
+            if (id == "" || pw == ""){
+                alert("아이디 혹은 비밀번호가 입력되지 않았습니다.");
+            }
+            else {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+                localStorage.setItem('아이디', id);
+                localStorage.setItem('비밀번호', pw);
+                localStorage.setItem('로그인시간', logintime);
+                setTimeout(lo, 3600000);
+            }
+        }
+        )
+        let logout = document.getElementById("logout")
+        logout.addEventListener("click",function(){
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            localStorage.clear();
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+        })
+        let mypage = document.getElementById("mypage")
+        mypage.addEventListener("click",function(){
+            window.open("mypage.html", "popup")  
+        })
+        let signup = document.getElementById("signup")
+        signup.addEventListener("click",function(){
+            let popup = window.open("signup.html", "popup", "width=500px, height=600px")
+            let popupcheck = setInterval(function(){
+                if (popup.closed) {
+                    clearInterval(popupcheck);
+                    location.reload();
+                }
+            },500);
+        })
+        let adsimg = document.getElementById("adsimg");
+        adsimg.addEventListener("click", function(){
+            window.open("#") //광고링크 넣기
+        })
+        document.addEventListener("DOMContentLoaded", function() {
+            if(localStorage.getItem('아이디')) {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+            }
+        })
+        if(localStorage.getItem('로그인시간')){
+            let lgtime = localStorage.getItem('로그인시간');
+            let now = new Date().getTime();
+            if(now - lgtime == 3600000) {
+                lo();
+            }
+            else {
+                let left = 3600000 - (now-lgtime); //시간 수정
+                setTimeout(lo,left);
+            }
+        }
+    </script>
+</body>
+</html>

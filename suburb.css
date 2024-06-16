@@ -113,58 +113,66 @@ body {
     flex: 70%;
     border: 1px solid gray;
     margin: 10px;
-    padding: 20px;
-    line-height: 30px;
-}
-#reviewbutton {
-    background-color: gainsboro;
-    width: 100px;
-    font-size: smaller;
-    text-align: center;
-    line-height: 20px;
-    padding: 5px 0;
-    position: absolute;
-    top: 300px;
-    left: 76%;
+    padding: 15px;
 }
 #article_title {
     font-weight: 600;
     font-size: 2em;
     margin-bottom: 20px;
-    margin-top: 5px;
 }
-.korea, .etc, .china, .west{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    margin-top: 20px;
+#map {
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
-.korea div, .etc div, .china div, .west div {
-    border: 1px solid black;
-    padding: 0px 20px 20px 20px;
+#article_contents {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
-.korea img, .etc img, .china img, .west img {
-    width: 260px;
+#content1, #content2 {
+    flex: 50%;
+    border: 1px dashed gray;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+#content1 img, #content2 img {
+    margin-top: 10px;
+    width: 300px;
     height: 180px;
+}
+#content1:hover, #content2:hover {
+    background-color: gainsboro;
+}
+#circle1 {
+    position: absolute;
+    font-size: 9em;
+    font-weight: 50;
+    top: 39.5%;
+    right: 27%;
+    opacity: 0;
+}
+#circle2 {
+    position: absolute;
+    font-size: 9em;
+    font-weight: 50;
+    top: 53%;
+    right: 27%;
+    opacity: 0;
+}
+#content1 li, #content2 li {
+    list-style-type: circle;
 }
 #ads {
     flex: 12%;
     margin: 10px;
-    padding: 0 0px 0px 10px;
-    position: relative;
+    padding: 0 20px;
 }
 #ads img {
-    width: 180px;
-    height: 200px;
-}
-#adstext {
-    position: absolute;
-    top: 55px;
-    left: 37px;
-    color: white;
-    z-index: 1;
-    text-align: center;
-    font-weight: bold;
+    width: 200px;
 }
 .footer {
     left: 0;

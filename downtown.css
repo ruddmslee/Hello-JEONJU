@@ -110,61 +110,33 @@ body {
     line-height: 30px;
 }
 #article {
-    flex: 70%;
+    flex: 82%;
     border: 1px solid gray;
     margin: 10px;
-    padding: 20px;
-    line-height: 30px;
-}
-#reviewbutton {
-    background-color: gainsboro;
-    width: 100px;
-    font-size: smaller;
-    text-align: center;
-    line-height: 20px;
-    padding: 5px 0;
-    position: absolute;
-    top: 300px;
-    left: 76%;
+    padding: 35px;
 }
 #article_title {
     font-weight: 600;
     font-size: 2em;
     margin-bottom: 20px;
-    margin-top: 5px;
 }
-.korea, .etc, .china, .west{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    margin-top: 20px;
-}
-.korea div, .etc div, .china div, .west div {
-    border: 1px solid black;
-    padding: 0px 20px 20px 20px;
-}
-.korea img, .etc img, .china img, .west img {
-    width: 260px;
-    height: 180px;
-}
-#ads {
-    flex: 12%;
-    margin: 10px;
-    padding: 0 0px 0px 10px;
-    position: relative;
-}
-#ads img {
-    width: 180px;
-    height: 200px;
-}
-#adstext {
-    position: absolute;
-    top: 55px;
-    left: 37px;
-    color: white;
-    z-index: 1;
+.article_body {
+    display: flex;
+    flex-direction: row;
     text-align: center;
-    font-weight: bold;
+}
+.article_contents {
+    margin: 0 0 0 30px;
+    flex: auto;
+}
+.nature, .exhibition {
+    border: 1px dashed darkgray;
+    margin: 0 0 20px 0;
+    padding: 20px;
+}
+#nature1, #nature2, #nature3, #exhibition1, #exhibition2, #exhibition3 {
+    display: inline-block;
+    margin: 0 10px;
 }
 .footer {
     left: 0;
