@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+    <div class="all">
+        <div class="header">
+            <img src="01. 한바탕전주 세계를 비빈다_03.png" alt="전주로고">
+        </div>
+        <div class="nav">
+            <div class="playdd">
+                <a href="hanok.html">놀거리</a>
+                <div class="playdd-contents">
+                    <a href="hanok.html">한옥마을여행</a>
+                    <a href="downtown.html">시내여행</a>
+                    <a href="suburb.html">근교여행</a>
+                </div>
+            </div>
+            <div class="fooddd">
+                <a href="food_type.html">먹거리</a>
+                <div class="fooddd-contents">
+                    <a href="food_type.html">종류별 추천</a>
+                    <a href="random.html">메뉴, 식당 랜덤추천</a>
+                </div>
+            </div>
+            <div class="transdd">
+                <a href="mainspot.html">교통편</a>
+                <div class="transdd-contents">
+                    <a href="mainspot.html">주요 관광지로 이동</a>
+                    <a href="https://map.naver.com/p?c=15.00,0,0,0,dh">다른 목적지로 이동</a>
+                </div>
+            </div>
+            <div class="commdd">
+                <a href="review.html">커뮤니티</a>
+                <div class="commdd-contents">
+                    <a href="review.html">간단한 후기, 별점 남기기</a>
+                    <a href="media.html">대중매체 속 전주</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="aside">
+                <div id="login-state">
+                    <input type="button" value="로그아웃" id="logout">
+                    <input type="button" value="마이페이지" id="mypage">
+                </div>
+                <div id="notlogin-state">
+                        <label for="id">아이디</label>
+                        <input type="text"  id="id" name="id">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" name="pw">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="로그인" id="login">
+                        <input type="button" value="회원가입" id="signup">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <h3>커뮤니티</h3>
+                        <li><a href="review.html" style="text-decoration: underline; color:black;">간단한 후기, 별점 남기기</a></li>
+                        <li><a href="media.html">대중매체 속 전주</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="article">
+                <div id="article_title">간단한 후기, 별점 남기기</div>
+                &nbsp;&nbsp;간단한 후기를 남겨보고 다른 사람들의 후기도 확인해보세요!<br>
+                <div id="inputarea">
+                    <input type="text" id="place" placeholder="장소/업체명">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만족도&nbsp;&nbsp;
+                    <select id="score">
+                        <option>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" id="review" placeholder="한줄 후기를 작성하세요">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button onclick="newRegister(); return false;">추가</button>
+                </div>
+                <br><br><br>
+                <div id="reviewList"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <span id="contact_us">CONTACT US</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="reference_file">참고 및 출처</span><br>
+            04310 서울특별시 용산구 청파로 47길 100 숙명여자대학교 100&nbsp;&nbsp;&nbsp;Ⓒdlruddms
+        </div>
+    </div>
+    <script>
+        function newRegister() {
+            //값 가져옴
+            let place = document.getElementById("place").value;
+            let score = document.getElementById("score").value;
+            let review = document.getElementById("review").value;
+            if(place===""||score===""){
+                alert('장소/업체명 혹은 만족도는 필수입력입니다.')
+            }
+            else {
+                switch(score) {
+                case "5":
+                    score = "★★★★★";
+                    break;
+                case "4":
+                    score = "★★★★☆";
+                    break;
+                case "3":
+                    score = "★★★☆☆";
+                    break;
+                case "2":
+                    score = "★★☆☆☆";
+                    break;
+                case "1":
+                    score = "★☆☆☆☆";
+                    break;
+                }
+                //노드생성 및 연결
+                var newPlace = document.createElement("span");
+                var newTextP = document.createTextNode(place);
+                newPlace.appendChild(newTextP);
+                var newScore = document.createElement("span");
+                var newTextS = document.createTextNode(score);
+                newScore.appendChild(newTextS);
+                var newReview = document.createElement("span");
+                var newTextR = document.createTextNode(review);
+                newReview.appendChild(newTextR);
+                //노드연결
+                var reviewList = document.getElementById("reviewList");
+                reviewList.insertBefore(document.createElement("br"), reviewList.childNodes[0]);
+                reviewList.insertBefore(newReview, reviewList.childNodes[0]);
+                reviewList.insertBefore(newScore, reviewList.childNodes[0]);
+                reviewList.insertBefore(newPlace, reviewList.childNodes[0]);
+                //로컬스토리지에 저장
+                let placelist = localStorage.getItem('placelist');
+                if(!placelist) {
+                    placelist = [];
+                }
+                else {
+                    placelist = JSON.parse(placelist);
+                }
+                placelist.push(place);
+                let str = score+";"+review;
+                localStorage.setItem(place,str);
+                localStorage.setItem('placelist', JSON.stringify(placelist));
+
+                document.getElementById("place").value = "";
+                document.getElementById("score").value = "";
+                document.getElementById("review").value = "";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function(){
+            let placelist = localStorage.getItem('placelist');
+            placelist = JSON.parse(placelist);
+
+            for(i=0;i<placelist.length;i++){
+                let placename = placelist[i];
+                let str = localStorage.getItem(placename);
+                let list = str.split(";");
+                var newPlace = document.createElement("span");
+                var newTextP = document.createTextNode(placename);
+                newPlace.appendChild(newTextP);
+                var newScore = document.createElement("span");
+                var newTextS = document.createTextNode(list[0]);
+                newScore.appendChild(newTextS);
+                var newReview = document.createElement("span");
+                var newTextR = document.createTextNode(list[1]);
+                newReview.appendChild(newTextR);
+                //노드연결
+                var reviewList = document.getElementById("reviewList");
+                reviewList.insertBefore(document.createElement("br"), reviewList.childNodes[0]);
+                reviewList.insertBefore(newReview, reviewList.childNodes[0]);
+                reviewList.insertBefore(newScore, reviewList.childNodes[0]);
+                reviewList.insertBefore(newPlace, reviewList.childNodes[0]);
+            }
+        })
+
+        function getCookie(name) {
+            let pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+	        for(let i=0; i<pairs.length; i++) {
+		        let pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+		        let unit = pair.split("=");
+		        if(unit[0] == name) {
+			        return unescape(unit[1]);
+	            }
+            }
+	        return null;
+        }
+        function setCookie (name, value, expireDate) {
+	        let cookieStr = name + "=" + escape(value) + 
+                ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
+            document.cookie = cookieStr;
+        }
+        let contact = document.getElementById("contact_us");
+        contact.addEventListener("click",function(){
+            window.open("contact_us.html", "popup", "width=630 height=450");
+        })
+        let rf = document.getElementById("reference_file");
+        rf.addEventListener("click", function(){
+            window.open("reference.html","popup","width=630 height=450");
+        })
+        function lo() {
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            setCookie('login', 'false');
+            setCookie('아이디', null)
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+            location.reload();
+            alert("일정시간이 지나 자동로그아웃되었습니다.");
+        }
+        let login = document.getElementById("login");
+        login.addEventListener("click", function(){
+            let id = document.getElementById('id').value;
+            let pw = document.getElementById('pw').value;
+            let logintime = new Date().getTime();
+            if (id == "" || pw == ""){
+                alert("아이디 혹은 비밀번호가 입력되지 않았습니다.");
+            }
+            else if (localStorage.getItem(id) === null ) {
+                alert('해당 아이디가 존재하지 않습니다.');
+            }
+            else if (pw !== localStorage.getItem(id)){
+                alert('잘못된 비밀번호입니다.')
+            }
+            else {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+                let expire = new Date();
+                expire.setTime(expire.getTime() + 3600000);
+                setCookie("login", "true", expire);
+                setCookie('아이디', id);
+                setTimeout(lo, 3600000);
+            }
+        }
+        )
+        let logout = document.getElementById("logout")
+        logout.addEventListener("click",function(){
+            document.getElementById("login-state").style.display = "none";
+            document.getElementById("notlogin-state").style.display = "block";
+            setCookie("login", "false");
+            setCookie('아이디', null);
+            document.getElementById("id").value = "";
+            document.getElementById("pw").value = "";
+        })
+        let mypage = document.getElementById("mypage")
+        mypage.addEventListener("click",function(){
+            window.open("mypage.html", "popup") 
+        })
+        let signup = document.getElementById("signup")
+        signup.addEventListener("click",function(){
+            let popup = window.open("signup.html", "popup", "width=500px, height=600px")
+        })
+        let adsimg = document.getElementById("adsimg");
+        adsimg.addEventListener("click", function(){
+            window.open("#") //광고링크 넣기
+        })
+        document.addEventListener("DOMContentLoaded", function() {
+            if(getCookie('login')==='true') {
+                document.getElementById("login-state").style.display = "block";
+                document.getElementById("login-state").style.marginTop = "10px";
+                document.getElementById("notlogin-state").style.display = "none";
+            }
+        })
+    </script>
+</body>
+</html>

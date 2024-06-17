@@ -139,6 +139,8 @@
         let wdbutton = document.getElementById("withdrawbutton");
         wdbutton.addEventListener("click", function(){
             localStorage.removeItem(forid);
+            setCookie('login', 'false');
+            setCookie('아이디', null);
             alert('회원탈퇴가 완료되었습니다.')
             window.location.href="main.html";
         })
