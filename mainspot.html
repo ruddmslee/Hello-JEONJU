@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="suburb.css">
+    <link rel="stylesheet" href="mainspot.css">
 </head>
 <body>
     <div class="all">
@@ -62,44 +62,55 @@
                 </div>
                 <div class="menu">
                     <ul>
-                        <h3>놀거리</h3>
-                        <li><a href="hanok.html">한옥마을여행</a></li>
-                        <li><a href="downtown.html">시내여행</a></li>
-                        <li><a href="suburb.html" style="text-decoration: underline;">근교여행</a></li>
+                        <h3>교통편</h3>
+                        <li><a style="text-decoration: underline;" href="mainspot.html">주요 관광지로 이동</a></li>
+                        <li><a href="https://map.naver.com/p?c=15.00,0,0,0,dh">다른 목적지로 이동</a></li>
+
                     </ul>
                 </div>
             </div>
-            <div id="ads" style="text-align: center;">
-                <img src="광고_도립미술관1.png" alt="광고">
-                <img src="광고_도립미술관2.png" alt="광고">
-                <a target="blank" style="color:black" href="https://www.jma.go.kr/index.php?mode=homepage">전시 더 알아보기</a>
-            </div>
             <div id="article">
-                <div id="article_title">근교여행</div>
-                <img id="map" src="전라북도지도.png" alt="전라북도지도" style="width:430px; height: 300px;"><br><br>
-                <div id="circle1">ㅇ</div>
-                <div id="circle2">ㅇ</div>
+                <div id="article_title" style="text-align: center;">교통편</div>
                 <div id="article_contents">
                     <div id="content1">
-                        <h2 style="font-weight: 600; margin: 5px 0 13px 0; font-size: 1.4em;">완주</h2>
-                        <img src="삼례문화예술촌.png" alt="사진" id="image1"><br>
-                        <p>
-                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/entry/place/13491207?lng=127.0851719&lat=35.7285794&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">모악산</a></li>
-                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/entry/place/11620352?lng=127.1069464&lat=35.7278363&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">전북도립미술관</a></li>
-                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/search/%EA%B5%AC%EC%9D%B4%EC%A0%80%EC%88%98%EC%A7%80/place/17614020?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh">구이저수지</a></li>
-                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/search/%EC%82%BC%EB%A1%80%EC%98%88%EC%88%A0%EC%B4%8C/place/32582350?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh">삼례문화예술촌</a></li>
-                        </p>
+                        <div style="text-align: center; font-size: 1.3em;"><b>전주역</b>으로 도착</div><br>
+                        <img src="기차아이콘.png" alt="버스아이콘" id="trainicon"><br><br><br><br>
+                        <span style="font-size: 1.1em; font-weight: 500; margin: 15px;">>>&nbsp;&nbsp;&nbsp;버스로 이동</span><br>
+                        <div id="content1_bus" style="padding: 20px;">
+                            <li style="list-style-type: circle;"><ins>전주향교</ins>로 이동</li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전주역첫마중길 버스정류장에서 119번 버스 탑승<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;기린대로 병무청에서 430번 혹은 350번 버스로 환승 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;한벽루자만벽화마을에서 하차
+                            <li style="list-style-type: circle;"><ins>경기전</ins>으로 이동</li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전주역첫마중길 버스정류장에서 119번 버스 탑승<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;전동성당, 한옥마을에서 하차<br>
+                            <li style="list-style-type: circle;"><ins>전동성당</ins>으로 이동</li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전주역첫마중길 버스정류장에서 119번 버스 탑승<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;남부시장에서 하차
+                        </div><br>
+                        <span style="font-size: 1.1em; font-weight: 500; margin: 15px;">>>&nbsp;&nbsp;&nbsp;택시로 이동</span><br>
+                        <div id="content1_taxi" style="padding: 15px;">
+                            역 앞으로 나와 파란 선을 따라 택시승강장으로 이동하세요!<br>
+                            * 전주역 공사로 인해 약간의 혼잡이 예상됩니다.
+                        </div>
                     </div>
                     <div id="content2">
-                        <h2 style="font-weight: 600; margin: 5px 0 13px 0; font-size: 1.4em;">임실</h2>
-                        <img src="임실치즈테마파크2.png" alt="사진" id="image2"><br>
-                        <p>
-                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/entry/place/11491834?lng=127.1117031&lat=35.5909545&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">옥정호</a></li>
-                            <li><a target="blank" style="color: black" href="https://map.naver.com/p/search/%EC%9E%84%EC%8B%A4%EC%B9%98%EC%A6%88%ED%85%8C%EB%A7%88%ED%8C%8C%ED%81%AC/place/1514459962?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh">임실치즈테마파크</a></li>
-                            <br>
-                        </p> 
+                        <div style="text-align: center; font-size: 1.3em"><b>고속버스터미널</b>로 도착</div><br>
+                        <img src="버스아이콘.png" alt="버스아이콘" id="busicon"><br><br><br><br>
+                        <span style="font-size: 1.1em; font-weight: 500; margin: 15px;">>>&nbsp;&nbsp;&nbsp;버스로 이동</span><br>
+                        <div id="content2_bus" style="padding: 20px;">
+                            <li style="list-style-type: circle;"><ins>전주향교</ins>로 이동</li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고속터미널입구.구.국민은행금암지점 버스정류장에서<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;430번 버스 탑승<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;한벽루 자만벽화마을에서 하차
+                            <li style="list-style-type: circle;"><ins>경기전, 전동성당</ins>으로 이동</li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고속버스터미널, 불교회관 버스정류장에서<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;79번 버스 탑승<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;전동성당, 한옥마을에서 하차
+                        </div><br><br><br>
+                        <span style="font-size: 1.1em; font-weight: 500; margin: 15px;">>>&nbsp;&nbsp;&nbsp;택시로 이동</span><br>
+                        <div id="content2_taxi" style="padding: 15px;">
+                            버스에서 내린 후 터미널 안으로 들어가자마자 있는<br>에스컬레이터를 탑승하여 한 층 올라간 후 출입문으로 나가<br>바로 좌회전한 후 택시승강장으로 가세요!
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div id="ads" style="font-size: 0.8em; text-align: center;">
+                <img src="광고_풍년제과1.png" alt="광고" class="adsimg">
+                <img src="광고_풍년제과2.png" alt="광고" class="adsimg">
+                사진을 클릭하여 전주역 근처<br>베이커리를 알아보세요!
             </div>
         </div>
         <div class="footer">
@@ -125,46 +136,6 @@
                 ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
             document.cookie = cookieStr;
         }
-        let image1arr = ["모악산.png", "전북도립미술관.png", "삼례문화예술촌.png"];
-        let image2arr = ["옥정호1.png", "옥정호2.png", "임실치즈테마파크1.png", "임실치즈테마파크2.png"];
-        let index1 = 0;
-        let index2 = 0;
-
-        function img1change() {
-            let image1 = document.getElementById("image1");
-            image1.src = image1arr[index1];
-            index1 = (index1+1) % image1arr.length;
-        }
-        function img2change() {
-            let image2 = document.getElementById("image2");
-            image2.src = image2arr[index2];
-            index2 = (index2+1) % image2arr.length;
-        }
-        setInterval(img1change,7000);
-        setInterval(img2change, 7000);
-
-        let content1 = document.getElementById("content1");
-        content1.addEventListener("mouseover", function(){
-            let circle1 = document.getElementById("circle1");
-            circle1.style.opacity = "1";
-            circle1.style.transition = "opacity 0.1s ease";
-        })
-        content1.addEventListener("mouseout", function(){
-            let circle1 = document.getElementById("circle1");
-            circle1.style.opacity = "0";
-            circle1.style.transition = "opacity 0.1s ease";
-        })
-        let content2 = document.getElementById("content2");
-        content2.addEventListener("mouseover", function(){
-            let circle2 = document.getElementById("circle2");
-            circle2.style.opacity = "1";
-            circle2.style.transition = "opacity 0.1s ease";
-        })
-        content2.addEventListener("mouseout", function(){
-            let circle2 = document.getElementById("circle2");
-            circle2.style.opacity = "0";
-            circle2.style.transition = "opacity 0.1s ease";
-        })
         let contact = document.getElementById("contact_us");
         contact.addEventListener("click",function(){
             window.open("contact_us.html", "popup", "width=630 height=450");
@@ -220,7 +191,7 @@
         })
         let mypage = document.getElementById("mypage")
         mypage.addEventListener("click",function(){
-            window.open("mypage.html", "popup")  
+            window.open("mypage.html", "popup") 
         })
         let signup = document.getElementById("signup")
         signup.addEventListener("click",function(){
@@ -232,6 +203,12 @@
                 }
             },500);
         })
+        let adsimg = document.getElementsByClassName("adsimg");
+        for(i=0; i<adsimg.length; i++){
+            adsimg[i].addEventListener("click", function(){
+                window.open("https://map.naver.com/p/entry/place/1917063591?c=15.00,0,0,0,dh&placePath=/home");
+            })
+        }
         document.addEventListener("DOMContentLoaded", function() {
             if(getCookie('login')==='true') {
                 document.getElementById("login-state").style.display = "block";

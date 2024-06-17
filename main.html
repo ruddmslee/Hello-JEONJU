@@ -149,25 +149,25 @@
             }
 	        return null;
         }
-        function SetCookie (name, value, expireDate) {
+        function setCookie (name, value, expireDate) {
 	        let cookieStr = name + "=" + escape(value) + 
                 ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
             document.cookie = cookieStr;
         }
         document.addEventListener("DOMContentLoaded", function() {
-            if(getCookie("yespopup") !== "true") {
+            if(getCookie("popup") !== "false") {
                 document.getElementById("popup").style.display = "block";
             }
         })
 
-        document.getElementById("popupclose").addEventListener("click", function(){
+        document.getElementById("popupclose").addEventListener("click", function(){ //팝업닫기
             document.getElementById("popup").style.display = "none"
         })
 
-        document.getElementById("dontshow").addEventListener("click", function(){
+        document.getElementById("dontshow").addEventListener("click", function(){ //오늘하루보지않기
             let expire = new Date();
             expire.setTime(expire.getTime() + (24*60*60*1000));
-            SetCookie("yespopup", "true", expire);
+            setCookie("popup", "false", expire);
             document.getElementById("popup").style.display = "none";
         })
     </script>

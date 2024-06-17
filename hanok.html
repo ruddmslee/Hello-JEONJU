@@ -35,7 +35,7 @@
                 <a href="mainspot.html">교통편</a>
                 <div class="transdd-contents">
                     <a href="mainspot.html">주요 관광지로 이동</a>
-                    <a href="otherspot.html">다른 목적지로 이동</a>
+                    <a href="https://map.naver.com/p?c=15.00,0,0,0,dh">다른 목적지로 이동</a>
                 </div>
             </div>
             <div class="commdd">
@@ -116,6 +116,22 @@
         </div>
     </div>
     <script>
+        function getCookie(name) {
+            let pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+	        for(let i=0; i<pairs.length; i++) {
+		        let pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+		        let unit = pair.split("=");
+		        if(unit[0] == name) {
+			        return unescape(unit[1]);
+	            }
+            }
+	        return null;
+        }
+        function setCookie (name, value, expireDate) {
+	        let cookieStr = name + "=" + escape(value) + 
+                ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
+            document.cookie = cookieStr;
+        }
         let contact = document.getElementById("contact_us");
         contact.addEventListener("click",function(){
             window.open("contact_us.html", "popup", "width=630 height=450");
@@ -127,9 +143,11 @@
         function lo() {
             document.getElementById("login-state").style.display = "none";
             document.getElementById("notlogin-state").style.display = "block";
-            localStorage.clear();
+            setCookie('login', 'false');
+            setCookie('아이디', null);
             document.getElementById("id").value = "";
             document.getElementById("pw").value = "";
+            location.reload();
             alert("일정시간이 지나 자동로그아웃되었습니다.");
         }
         let login = document.getElementById("login");
@@ -140,13 +158,20 @@
             if (id == "" || pw == ""){
                 alert("아이디 혹은 비밀번호가 입력되지 않았습니다.");
             }
+            else if (localStorage.getItem(id) === null ) {
+                alert('해당 아이디가 존재하지 않습니다.');
+            }
+            else if (pw !== localStorage.getItem(id)){
+                alert('잘못된 비밀번호입니다.')
+            }
             else {
                 document.getElementById("login-state").style.display = "block";
                 document.getElementById("login-state").style.marginTop = "10px";
                 document.getElementById("notlogin-state").style.display = "none";
-                localStorage.setItem('아이디', id);
-                localStorage.setItem('비밀번호', pw);
-                localStorage.setItem('로그인시간', logintime);
+                let expire = new Date();
+                expire.setTime(expire.getTime() + 3600000);
+                setCookie("login", "true", expire);
+                setCookie('아이디', id);
                 setTimeout(lo, 3600000);
             }
         }
@@ -155,7 +180,8 @@
         logout.addEventListener("click",function(){
             document.getElementById("login-state").style.display = "none";
             document.getElementById("notlogin-state").style.display = "block";
-            localStorage.clear();
+            setCookie("login", "false");
+            setCookie('아이디', null);
             document.getElementById("id").value = "";
             document.getElementById("pw").value = "";
         })
@@ -175,23 +201,12 @@
         })
 
         document.addEventListener("DOMContentLoaded", function() {
-            if(localStorage.getItem('아이디')) {
+            if(getCookie('login')==='true') {
                 document.getElementById("login-state").style.display = "block";
                 document.getElementById("login-state").style.marginTop = "10px";
                 document.getElementById("notlogin-state").style.display = "none";
             }
         })
-        if(localStorage.getItem('로그인시간')){
-            let lgtime = localStorage.getItem('로그인시간');
-            let now = new Date().getTime();
-            if(now - lgtime == 3600000) {
-                lo();
-            }
-            else {
-                let left = 3600000 - (now-lgtime); //시간 수정
-                setTimeout(lo,left);
-            }
-        }
         var map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(35.8147007, 127.1527077),
             zoom: 15

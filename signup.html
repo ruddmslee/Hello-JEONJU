@@ -75,17 +75,16 @@
 
         subutton.addEventListener("click", function(){
             if (id.value==="" || pw.value==="" || pwcheck.value===""){
-                alert('아이디나 비밀번호가 입력되지 않았습니다.')
+                alert('입력되지 않은 필수필드가 있습니다.')
             }
             else if (pw.value!==pwcheck.value) {
                 alert('비밀번호가 일치하지 않습니다.');
             }
             else{
                 alert('환영합니다!');
-                localStorage.setItem('아이디', id.value);
-                localStorage.setItem('비밀번호', pw.value);
-                let logintime = new Date().getTime();
-                localStorage.setItem('로그인 시간', logintime);
+                localStorage.setItem(id.value, pw.value);
+                setCookie('login', 'true', 3600000);
+                setCookie('아이디', id.value);
                 window.close();
             }
         })

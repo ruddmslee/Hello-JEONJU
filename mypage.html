@@ -34,7 +34,7 @@
                 <a href="mainspot.html">교통편</a>
                 <div class="transdd-contents">
                     <a href="mainspot.html">주요 관광지로 이동</a>
-                    <a href="otherspot.html">다른 목적지로 이동</a>
+                    <a href="https://map.naver.com/p?c=15.00,0,0,0,dh">다른 목적지로 이동</a>
                 </div>
             </div>
             <div class="commdd">
@@ -85,6 +85,22 @@
         </div>
     </div>
     <script>
+        function getCookie(name) {
+            let pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
+	        for(let i=0; i<pairs.length; i++) {
+		        let pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
+		        let unit = pair.split("=");
+		        if(unit[0] == name) {
+			        return unescape(unit[1]);
+	            }
+            }
+	        return null;
+        }
+        function setCookie (name, value, expireDate) {
+	        let cookieStr = name + "=" + escape(value) + 
+                ((expireDate == null)?"":("; expires=" + expireDate.toUTCString()));
+            document.cookie = cookieStr;
+        }
         let contact = document.getElementById("contact_us");
         contact.addEventListener("click",function(){
             window.open("contact_us.html", "popup", "width=630 height=450");
@@ -94,30 +110,21 @@
             window.open("reference.html","popup","width=630 height=450");
         })
         function lo() {
-            localStorage.clear();
+            setCookie('login', 'false');
+            setCookie('아이디', null);
+            location.reload();
             alert("일정시간이 지나 자동로그아웃되었습니다.");
         }
-        let forid = localStorage.getItem('아이디');
+        let forid = getCookie('아이디');
         document.getElementById("originid").value = forid;
         document.addEventListener("DOMContentLoaded", function() {
-            if(localStorage.getItem('아이디')){
+            if(getCookie('login')==='true'){
                 let checkpw = prompt('비밀번호를 입력하세요.');
-                while (checkpw !== localStorage.getItem('비밀번호')){
+                while (checkpw !== localStorage.getItem(forid)){
                     checkpw = prompt('비밀번호를 다시 입력하세요');
                 }
             }
         });
-        if(localStorage.getItem('로그인시간')){
-            let lgtime = localStorage.getItem('로그인시간');
-            let now = new Date().getTime();
-            if(now - lgtime == 3600000) {
-                lo();
-            }
-            else {
-                let left = 3600000 - (now-lgtime); //시간 수정
-                setTimeout(lo,left);
-            }
-        }
         let changebutton = document.getElementById("change");
         changebutton.addEventListener("click", function(){
             first = prompt('변경할 비밀번호를 입력하세요.');
@@ -126,12 +133,12 @@
                 second = prompt('비밀번호가 일치하지 않습니다. 다시 입력하세요.');
             }
             alert('비밀번호가 변경되었습니다.');
-            localStorage['비밀번호'] = second;
+            localStorage[forid] = second;
         })
 
         let wdbutton = document.getElementById("withdrawbutton");
         wdbutton.addEventListener("click", function(){
-            localStorage.clear();
+            localStorage.removeItem(forid);
             alert('회원탈퇴가 완료되었습니다.')
             window.location.href="main.html";
         })
