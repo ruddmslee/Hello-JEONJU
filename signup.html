@@ -83,8 +83,6 @@
             else{
                 alert('환영합니다!');
                 localStorage.setItem(id.value, pw.value);
-                setCookie('login', 'true', 3600000);
-                setCookie('아이디', id.value);
                 window.close();
             }
         })

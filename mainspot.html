@@ -196,12 +196,6 @@
         let signup = document.getElementById("signup")
         signup.addEventListener("click",function(){
             let popup = window.open("signup.html", "popup", "width=500px, height=600px")
-            let popupcheck = setInterval(function(){
-                if (popup.closed) {
-                    clearInterval(popupcheck);
-                    location.reload();
-                }
-            },500);
         })
         let adsimg = document.getElementsByClassName("adsimg");
         for(i=0; i<adsimg.length; i++){
