@@ -44,12 +44,14 @@ body {
     position: absolute;
     margin-top: 10px;
     margin-left: -25px;
+    z-index: 1;
 }
 .fooddd-contents, .transdd-contents, .commdd-contents {
     display: none;
     position: absolute;
     margin-top: 10px;
     margin-left: -50px;
+    z-index: 1;
 }
 .playdd:hover .playdd-contents, .fooddd:hover .fooddd-contents, .transdd:hover .transdd-contents, .commdd:hover .commdd-contents {
     display: block;
